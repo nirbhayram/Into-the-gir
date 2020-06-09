@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
-   <body>
-      <script language = "javascript" type = "text/javascript">
-         <!--
-         /*
-         The above tag is added in java script tags for protection pupose for the browser which does not support javascript.
-         These tags will be considered HTML comment tag and if java script is supported the last line before completion of script tag will be java script comment.
-         Else if java script is not supported the hole block would be html comment.
-         */
-            document.write("Hello World!")
-         //-->
-      </script>
-   </body>
+  <head>
+  </head>
+  <body>
+    <script type = "text/javascript" src = "SayHi.js" ></script>
+
+    <!--This tag is present if the javascript is not supported in browser.-->
+    
+    <noscript>
+      Sorry...JavaScript is needed to go ahead.
+    </noscript>
+
+    <input type = "button" onclick = "sayHi()" value = "Say Hello" />
+
+  </body>
+
+
 </html>
