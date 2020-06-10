@@ -16,3 +16,10 @@ function getConfirmationForRedirect(){
     reDirectToGoogle();
   }
 }
+
+var str = new String("This is string.");
+var arr = ["Nirbhay","Ram"];
+arr.forEach((item, i) => {
+  console.log(item);
+});
+console.log(Math.abs(-10));
