@@ -28,3 +28,5 @@ let book = books.find((book)=>{
 });
 
 console.log(book);
+
+books.forEach((book)=>console.log(book.author));
