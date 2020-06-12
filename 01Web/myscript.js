@@ -6,14 +6,18 @@ document.title = `Nirbhay it is changed.`
 //console.log(para);
 
 
+//Selecting element from HTML file using js file
 let allPElement = document.querySelectorAll("p");
 allPElement.forEach((p)=>p.textContent="This is changed by for each loop in JS file");
 
+
+//Adding new element to the html using js file
 let myNewPara = document.createElement("p");
 myNewPara.textContent = 'I was added by JS';
-
 document.querySelector("body").appendChild(myNewPara);
 
+
+//All related to adding button and its event listner
 let myNewButton = document.createElement("button");
 myNewButton.textContent = "Click me!";
 myNewButton.addEventListener('click',(event)=>{
@@ -22,5 +26,5 @@ myNewButton.addEventListener('click',(event)=>{
     }else{
         event.target.textContent="Click me!"
     }
-})
+});
 document.querySelector("body").appendChild(myNewButton);
