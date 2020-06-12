@@ -13,3 +13,14 @@ let myNewPara = document.createElement("p");
 myNewPara.textContent = 'I was added by JS';
 
 document.querySelector("body").appendChild(myNewPara);
+
+let myNewButton = document.createElement("button");
+myNewButton.textContent = "Click me!";
+myNewButton.addEventListener('click',(event)=>{
+    if(event.target.textContent=="Click me!"){
+        event.target.textContent="Don't click me!"
+    }else{
+        event.target.textContent="Click me!"
+    }
+})
+document.querySelector("body").appendChild(myNewButton);
