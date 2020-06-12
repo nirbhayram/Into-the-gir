@@ -8,3 +8,8 @@ document.title = `Nirbhay it is changed.`
 
 let allPElement = document.querySelectorAll("p");
 allPElement.forEach((p)=>p.textContent="This is changed by for each loop in JS file");
+
+let myNewPara = document.createElement("p");
+myNewPara.textContent = 'I was added by JS';
+
+document.querySelector("body").appendChild(myNewPara);
