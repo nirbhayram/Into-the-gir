@@ -46,13 +46,8 @@ function removeDoneToDo(){
     let list = document.querySelector("#list");
     let toRemoveList = [];
     for (listElement of list.querySelectorAll("li")){
-        // console.log(listElement.childNodes[0].checked);
         if(listElement.childNodes[0].checked){
-            toRemoveList.push(listElement);
+            list.removeChild(listElement);
         }
-    }
-    // console.log(toRemoveList);
-    while(toRemoveList.length!=0){
-        list.removeChild(toRemoveList.pop());
     }
 }
