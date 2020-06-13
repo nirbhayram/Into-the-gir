@@ -62,7 +62,7 @@ body{
 }
 #container ul li input[type="checkbox"]:checked + label{
     text-decoration: line-through;
-    color: rgba(0, 0, 0, 3);
+    color: rgba(0, 0, 0, .3);
 }
 #container .controls{
     width: 60%;
