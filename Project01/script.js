@@ -1,6 +1,8 @@
-// alert("Connected");
+let list = document.querySelector("#list");
+let inputText = document.querySelector("#input");
+
 function addToDo(){
-    let todo = document.querySelector("#input").value;
+    let todo = inputText.value;
     if(todo==""){
         alert("please enter some text")
         return;
@@ -13,7 +15,7 @@ function addToDo(){
 }
 
 function clearToDoText(){
-    document.querySelector("#input").value = "";
+    inputText.value = "";
 }
 
 function createListElement(){
@@ -38,13 +40,10 @@ function addLabelIntoLiElement(liElement,todo){
 }
 
 function addListElementIntoList(liElement){
-    let list = document.querySelector("#list");
     list.appendChild(liElement);
 }
 
 function removeDoneToDo(){
-    let list = document.querySelector("#list");
-    let toRemoveList = [];
     for (listElement of list.querySelectorAll("li")){
         if(listElement.childNodes[0].checked){
             list.removeChild(listElement);
