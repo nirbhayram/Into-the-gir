@@ -40,7 +40,11 @@ function addLabelIntoLiElement(liElement,todo){
 }
 
 function addListElementIntoList(liElement){
-    list.appendChild(liElement);
+    list.insertBefore(liElement,list.childNodes[0]);
+    setTimeout(() => {
+        liElement.className='visual';
+    }, 1);
+    // list.appendChild(liElement);
 }
 
 function removeDoneToDo(){

@@ -28,7 +28,7 @@ body{
     border: 2px solid #b5c5dd;
     border-radius: 10px;
     width: 80%;
-    opacity: 1;
+    opacity: 0;
     transition: opacity 0.5s ease-in-out;
     height: 40px;
     margin: 5px auto;
