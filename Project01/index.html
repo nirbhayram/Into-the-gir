@@ -11,7 +11,8 @@
     <div id="container">
         <div class="controls">
             <h1>My awsome todos</h1>
-            <input type="text" id="input"><br>
+            <input type="text" id="input" oninput="hideMessage()"><br>
+            <p id="message">Please enter your to-do task.</p>
             <button id="add" onclick="addToDo()">Add todo</button>
             <button id="remove" onclick="removeDoneToDo()">Remove done todo</button>
             <button id="removeAll" onclick="removeAllToDo()">Remove all todo</button>

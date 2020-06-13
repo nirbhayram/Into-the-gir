@@ -1,10 +1,15 @@
 let list = document.querySelector("#list");
 let inputText = document.querySelector("#input");
+let message = document.querySelector("#message");
 
 function addToDo(){
     let todo = inputText.value;
     if(todo==""){
-        alert("please enter some text")
+        promptMessage('Please enter your to-do task.');
+        return;
+    }
+    if (todo.length>50) {
+        promptMessage('Total letters should be less than 50.');
         return;
     }
     let liElement = createListElement();
@@ -12,6 +17,19 @@ function addToDo(){
     liElement = addLabelIntoLiElement(liElement,todo);
     addListElementIntoList(liElement);
     clearToDoText();
+}
+
+function promptMessage(displayMessage){
+    message.textContent = displayMessage;
+    setTimeout(() => {
+        message.className= 'visual';
+    }, 5);
+}
+
+function hideMessage(){
+    setTimeout(() => {
+        message.className= '';
+    }, 5);
 }
 
 function clearToDoText(){
