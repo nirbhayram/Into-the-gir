@@ -50,3 +50,12 @@ function removeDoneToDo(){
         }
     }
 }
+
+function removeAllToDo(){
+    let replyToRemoveAllTodo = confirm("Are you sure you want to remove all todo's?");
+    if(replyToRemoveAllTodo){
+        for (listElement of list.querySelectorAll("li")){
+            list.removeChild(listElement);
+        }
+    }   
+}

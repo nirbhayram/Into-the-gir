@@ -104,6 +104,10 @@ body{
     background-color: #c0392b;
     border-radius: 10px;
 }
+#container .controls #removeAll{
+    background-color: #611007;
+    border-radius: 10px;
+}
 #container .mycheck{
     opacity: 1;
     border-radius: 10px;
