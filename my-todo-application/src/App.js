@@ -32,16 +32,16 @@ class Clock extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            time: new Date()
+            time: new Date(),
         }
     }
     componentDidMount() {
-        this.timerId = setInterval(()=>{this.updateTime()},1)
+        this.timerId = setInterval(()=>{this.updateTime()},1000)
     }
     updateTime(){
         this.setState({
             time:new Date()
-        })
+        });
     }
     componentWillUnmount() {
         clearInterval(this.timerId);
