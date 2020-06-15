@@ -27,33 +27,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-class Clock extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            time: new Date(),
-        }
-    }
-    componentDidMount() {
-        this.timerId = setInterval(()=>{this.updateTime()},1000)
-    }
-    updateTime(){
-        this.setState({
-            time:new Date()
-        });
-    }
-    componentWillUnmount() {
-        clearInterval(this.timerId);
-    }
-    render() {
-        return (
-            <div>
-                {this.state.time.toLocaleTimeString()}
-            </div>
-        );
-    }
-}
+import Clock from "./Clock";
 
 class App extends React.Component {
     render() {
@@ -61,10 +35,10 @@ class App extends React.Component {
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
-                    <p>
+                    <div>
                         This is first <code>Application</code> created by <code>Nirbhay</code>.<br/>
                         <Clock/>
-                    </p>
+                    </div>
                     <a
                         className="App-link"
                         href="https://reactjs.org"
