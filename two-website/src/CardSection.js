@@ -8,7 +8,7 @@ const CardSection = () => (
             </h2>
             <div className="row">
                 <div className="col-4">
-                    <div className="card" style="width: 18rem;">
+                    <div className="card" style={{width: '18rem'}}>
                         <img
                             src="https://images.pexels.com/photos/3532557/pexels-photo-3532557.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                             className="card-img-top"
@@ -25,7 +25,7 @@ const CardSection = () => (
                     </div>
                 </div>
                 <div className="col-4">
-                    <div className="card" style="width: 18rem;">
+                    <div className="card" style={{width: "18rem;"}}>
                         <img
                             src="https://images.pexels.com/photos/3532544/pexels-photo-3532544.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                             className="card-img-top"
@@ -42,7 +42,7 @@ const CardSection = () => (
                     </div>
                 </div>
                 <div className="col-4">
-                    <div className="card" style="width: 18rem;">
+                    <div className="card" style={{width: "18rem;"}}>
                         <img
                             src="https://images.pexels.com/photos/2522663/pexels-photo-2522663.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                             className="card-img-top"
