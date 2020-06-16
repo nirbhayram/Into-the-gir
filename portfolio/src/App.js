@@ -2,6 +2,7 @@ import React from "react"
 import NavigationBar from "./NavigationBar";
 import Masterhead from "./Masterhead";
 import Portfolio from "./Portfolio";
+import AboutSection from "./AboutSection";
 
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
             <NavigationBar/>
             <Masterhead/>
             <Portfolio/>
+            <AboutSection/>
         </div>
     )
 }
