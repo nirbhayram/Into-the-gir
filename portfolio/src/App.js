@@ -5,6 +5,7 @@ import Portfolio from "./Portfolio";
 import AboutSection from "./AboutSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
+import Copyrights from "./Copyrights";
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
             <AboutSection/>
             <ContactSection/>
             <Footer/>
+            <Copyrights/>
         </div>
     )
 }
