@@ -3,6 +3,7 @@ import NavigationBar from "./NavigationBar";
 import Masterhead from "./Masterhead";
 import Portfolio from "./Portfolio";
 import AboutSection from "./AboutSection";
+import ContactSection from "./ContactSection";
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
             <Masterhead/>
             <Portfolio/>
             <AboutSection/>
+            <ContactSection/>
         </div>
     )
 }
