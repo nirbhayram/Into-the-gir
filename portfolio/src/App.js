@@ -4,6 +4,7 @@ import Masterhead from "./Masterhead";
 import Portfolio from "./Portfolio";
 import AboutSection from "./AboutSection";
 import ContactSection from "./ContactSection";
+import Footer from "./Footer";
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
             <Portfolio/>
             <AboutSection/>
             <ContactSection/>
+            <Footer/>
         </div>
     )
 }
