@@ -1,5 +1,7 @@
 import React from "react"
 import NavigationBar from "./NavigationBar";
+import Masterhead from "./Masterhead";
+import Portfolio from "./Portfolio";
 
 
 const App = () => {
@@ -7,6 +9,7 @@ const App = () => {
         <div>
             <NavigationBar/>
             <Masterhead/>
+            <Portfolio/>
         </div>
     )
 }
