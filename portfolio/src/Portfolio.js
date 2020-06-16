@@ -18,6 +18,7 @@ const Portfolio = () => {
                     <div className="divider-custom-line"></div>
                 </div>
                 <div className="row">
+                    {/*Whenever you enter any card over here, please create it's model in PortfolioModalContainer with the same ID*/}
                     <Card image={cabin} portfolioModalId="#portfolioModal1"/>
                     <Card image={cake} portfolioModalId="#portfolioModal2"/>
                     <Card image={circus} portfolioModalId="#portfolioModal3"/>
