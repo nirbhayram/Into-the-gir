@@ -6,6 +6,7 @@ import AboutSection from "./AboutSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import Copyrights from "./Copyrights";
+import PortfolioModalContainer from "./PortfolioModalContainer";
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
             <ContactSection/>
             <Footer/>
             <Copyrights/>
+            <PortfolioModalContainer/>
         </div>
     )
 }

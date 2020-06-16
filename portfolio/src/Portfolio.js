@@ -18,12 +18,12 @@ const Portfolio = () => {
                     <div className="divider-custom-line"></div>
                 </div>
                 <div className="row">
-                    <Card image={cabin}/>
-                    <Card image={cake}/>
-                    <Card image={circus}/>
-                    <Card image={game}/>
-                    <Card image={safe}/>
-                    <Card image={submarine}/>
+                    <Card image={cabin} portfolioModalId="#portfolioModal1"/>
+                    <Card image={cake} portfolioModalId="#portfolioModal2"/>
+                    <Card image={circus} portfolioModalId="#portfolioModal3"/>
+                    <Card image={game} portfolioModalId="#portfolioModal4"/>
+                    <Card image={safe} portfolioModalId="#portfolioModal5"/>
+                    <Card image={submarine} portfolioModalId="#portfolioModal6"/>
                 </div>
             </div>
         </section>
