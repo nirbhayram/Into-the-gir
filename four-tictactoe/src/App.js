@@ -10,20 +10,69 @@ import "bootstrap/dist/css/bootstrap.css";
 import './App.css';
 
 const itemArray = new Array(9).fill("empty");
+let count = 0;
 
 function App() {
 
 	const [isCross, setIsCross] = useState("fasle");
 	const [winMessage, setWinMessage] = useState("");
 
+	const checkCount=()=>{
+		count++;
+		if(count === 9){
+			setWinMessage("Game tie")
+		}
+	}
+
 	const reload = () => {
 		setIsCross("false");
 		setWinMessage("");
+		count =0;
 		itemArray.fill("empty");
 	}
 
 	const checkIsWinner = () => {
-
+		if(itemArray[0]===itemArray[1]&&
+			itemArray[1]===itemArray[2]&&
+			itemArray[0]!=="empty"
+		){
+			setWinMessage(itemArray[0]+" is winner")
+		}else if(itemArray[3]===itemArray[4]&&
+			itemArray[3]===itemArray[5]&&
+			itemArray[3]!=="empty"
+		){
+			setWinMessage(itemArray[3]+" is winner")
+		}else if(itemArray[6]===itemArray[7]&&
+			itemArray[6]===itemArray[8]&&
+			itemArray[6]!=="empty"
+		){
+			setWinMessage(itemArray[6]+" is winner")
+		}else if(itemArray[0]===itemArray[3]&&
+			itemArray[0]===itemArray[6]&&
+			itemArray[0]!=="empty"
+		){
+			setWinMessage(itemArray[0]+" is winner")
+		}else if(itemArray[1]===itemArray[4]&&
+			itemArray[1]===itemArray[7]&&
+			itemArray[1]!=="empty"
+		){
+			setWinMessage(itemArray[1]+" is winner")
+		}else if(itemArray[2]===itemArray[5]&&
+			itemArray[2]===itemArray[8]&&
+			itemArray[2]!=="empty"
+		){
+			setWinMessage(itemArray[2]+" is winner")
+		}else if(itemArray[0]===itemArray[4]&&
+			itemArray[0]===itemArray[8]&&
+			itemArray[0]!=="empty"
+		){
+			setWinMessage(itemArray[0]+" is winner")
+		}else if(itemArray[2]===itemArray[4]&&
+			itemArray[2]===itemArray[6]&&
+			itemArray[2]!=="empty"
+		){
+			setWinMessage(itemArray[2]+" is winner")
+		}
 	}
 
 	const changeItem = (itemNumber) => {
@@ -31,13 +80,15 @@ function App() {
 			return toast(winMessage, { type:"success" })
 		} else {
 			if (itemArray[itemNumber] === "empty") {
-				isCross ? itemNumber[itemNumber] = "cross" : itemNumber[itemNumber] = "circle"
+				isCross ? itemArray[itemNumber] = "cross" : itemArray[itemNumber] = "circle"
 				setIsCross(!isCross);
 			}
 			else {
 				return toast("Already filled", { type:"error" })
 			}
 		}
+		checkIsWinner();
+		checkCount();
 	}
 
 	return (
@@ -55,7 +106,7 @@ function App() {
 						)}
 					<div className="grid">
 						{itemArray.map((item, index) => (
-							<Card>
+							<Card key={index} onClick={()=>changeItem(index)}>
 								<CardBody className="box">
 									<Icon name={item} />
 								</CardBody>
