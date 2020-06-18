@@ -8,7 +8,7 @@ const ThemeToggler = () => {
         <div onClick={
             ()=>{SetThemeMode(themeMode==="light"?"dark":"light")}
         }>
-            <p>{themeMode==="light"?"Turn off lights":"Turn on the lights"}</p>
+            <p>{themeMode==="light"?"Turn off light":"Turn on the light"}</p>
         </div>
     )
 }
