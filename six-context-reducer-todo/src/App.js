@@ -5,6 +5,7 @@ import todoReducer from "./context/reducer"
 import {TodoContext} from "./context/TodoContext";
 import Container from "reactstrap/lib/Container";
 import TodoForm from "./components/TodoForms";
+import Todo from "./components/Todo";
 
 function App() {
     const [todos, dispatch] = useReducer(todoReducer, [])
@@ -12,6 +13,7 @@ function App() {
         <TodoContext.Provider value={{todos,dispatch}}>
             <Container fluid>
                 <h1>This is todo application with context API</h1>
+                <Todo/>
                 <TodoForm/>
             </Container>
         </TodoContext.Provider>

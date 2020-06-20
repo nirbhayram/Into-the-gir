@@ -26,11 +26,10 @@ const TodoForm = ()=>{
             id: v4()
         }
         dispatch({
-            action: ADD_TODO,
+            type: ADD_TODO,
             payload: todoObject
         });
         setTodo("")
-        console.log("dispatched...")
     }
     return (
         <Form onSubmit={handleSubmit}>
