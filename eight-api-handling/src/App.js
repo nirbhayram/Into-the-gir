@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react'
+import Axios from "axios";
+import {Container,Row,Col} from "reactstrap"
+import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [details, setDetails] = useState({})
+    const fetchDetails = async ()=>{
+        const response = await Axios.get("https://randomuser.me/api/")
+        let details = response.data
+        setDetails(details)
+        console.log(response.data.results)
+        response.data.results.map((item)=>{console.log(`${item.name.title} ${item.name.first} ${item.name.last}`)})
+    }
+    useEffect(()=>{
+        fetchDetails()
+    },[])
+    return (
+        <div>
+            <h2>Nirbhay</h2>
+        </div>
+    )
 }
 
 export default App;
