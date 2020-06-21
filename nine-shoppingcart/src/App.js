@@ -5,45 +5,61 @@ import BuyPage from './Components/BuyPage';
 import "bootstrap/dist/css/bootstrap.min.css"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Container, Row, Col } from "reactstrap"
+import Cart from './Components/Cart';
 
 
 function App() {
-  toast.configure();
-  const [items, setItems] = useState([]);
 
-  const addItemToCart = (item) => {
-    const isAlreadyAdded = items.findIndex((i) => i.id === item.id)
-    if (isAlreadyAdded !== -1) {
-      toast.error('Item is already in the cart', {
-        position: "bottom-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-      });
-      return
-    }
-    setItems([...items, item]);
-  }
+	const [items, setItems] = useState([]);
 
-  const removeItem = (id) => {
-    setItems(items.filter((item) => item.id !== id))
-  }
+	const addItemToCart = (item) => {
+		const isAlreadyAdded = items.findIndex((i) => i.id === item.id)
+		if (isAlreadyAdded !== -1) {
+			toast.error('Item is already in the cart', {
+				position: "bottom-center",
+				autoClose: 2000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: false,
+				draggable: true,
+				progress: undefined,
+			});
+			return
+		}
+		setItems([...items, item]);
+	}
 
-  const purchaseItems = () => {
-    toast("All items purchased.", {
-      type: "success"
-    });
-    setItems([]);
-  }
+	const removeItem = (id) => {
+		setItems(items.filter((item) => item.id !== id))
+	}
 
-  return (
-    <div className="App">
-      <BuyPage addItemToCart={addItemToCart} />
-    </div>
-  );
+	const purchaseItems = () => {
+		toast('All item purchased', {
+			position: "top-right",
+			autoClose: 2000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+		});
+		setItems([]);
+	}
+
+	return (
+		<Container fluid>
+			<ToastContainer />
+			<Row>
+				<Col md="8">
+					<BuyPage addItemToCart={addItemToCart} />
+				</Col>
+				<Col md="4">
+					<Cart removeItem={removeItem} products={items} purchaseItems={purchaseItems} />
+				</Col>
+			</Row>
+		</Container>
+	);
 }
 
 export default App;
