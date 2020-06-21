@@ -1,9 +1,64 @@
-import React from 'react'
+import React, { useState, useContext } from "react";
+import Axios from "axios";
+
+import {
+    Row,
+    Container,
+    Col,
+    Input,
+    Button,
+    InputGroup,
+    InputGroupAddon
+} from "reactstrap";
+
+
+
+import { Redirect } from "react-router-dom";
+import UserContext from "../context/UserContext";
+import { toast } from "react-toastify";
+import UserCard from "../components/UserCard";
+import RepoList from "../components/RepoList";
+
 
 export default function Home() {
+
+    const context = useContext(UserContext);
+
+    const [query, setQuery] = useState("");
+
+    const [user, setUser] = useState(null);
+
+    const fectDetails = async () => {
+        try {
+            const { data } = await Axios.get(`https://api.github.com/users/${query}`)
+            setUser(data)
+            console.log(data)
+        } catch (error) {
+            toast.error("User not found.")
+        }
+    }
+
     return (
-        <div>
-            <h1>Home page</h1>
-        </div>
-    )
+        <Container>
+            <Row className=" mt-3">
+                <Col md="5">
+                    <InputGroup>
+                        <Input
+                            type="text"
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            placeholder="Please provide the username"
+                        />
+                        <InputGroupAddon addonType="append">
+                            <Button onClick={fectDetails} color="primary">Fetch User</Button>
+                        </InputGroupAddon>
+                    </InputGroup>
+                    {user ? <UserCard user={user} /> : null}
+                </Col>
+                <Col md="7" >
+                    {user ? <RepoList repo_url={user.repos_url} /> : null}
+                </Col>
+            </Row>
+        </Container>
+    );
 }

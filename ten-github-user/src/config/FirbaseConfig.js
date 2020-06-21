@@ -8,3 +8,4 @@ export default {
     appId: "1:874660418319:web:696226ee123dd8ed72647a",
     measurementId: "G-SFTWQN02BM"
   }
+  

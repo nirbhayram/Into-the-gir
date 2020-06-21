@@ -7,7 +7,7 @@ export default function Footer() {
         <Container
             fluid
             tag="footer"
-            className="text-center bg-info text-white fixed-bottom p-2"
+            className="text-center bg-info text-white fixed-bottom p-2 mt-5"
         >
             all copyrights are reserved by nirbhay-ram.me
         </Container>

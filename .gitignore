@@ -10,3 +10,4 @@ portfolio/.idea/
 portfolio/template/
 six-context-reducer-todo/.idea/
 eight-api-handling/.idea/
+ten-github-user/src/config/FirbaseConfig.js
