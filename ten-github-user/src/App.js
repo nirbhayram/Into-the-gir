@@ -18,8 +18,10 @@ import Home from './pages/Home';
 import PageNotFound from './pages/PageNotFound';
 import SignIn from './pages/SignIn';
 import SignUp from "./pages/SignUp"
-
-// Components
+import Footer from './layout/Footer';
+import Header from './layout/Header';
+import FirebaseConfig from "./config/FirbaseConfig"
+firebase.initializeApp(FirebaseConfig)
 
 const App = () => {
 
@@ -29,12 +31,14 @@ const App = () => {
 		<Router>
 			<UserContext.Provider value={{ user, setUser }}>
 				<ToastContainer />
+				<Header/>
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/signin" component={SignIn} />
 					<Route exact path="/signup" component={SignUp} />
 					<Route exact path="*" component={PageNotFound} />
 				</Switch>
+				<Footer/>
 			</UserContext.Provider>
 		</Router>
 	);
