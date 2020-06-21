@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import BuyPage from './Components/BuyPage';
 import "bootstrap/dist/css/bootstrap.min.css"
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast, Flip, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Container, Row, Col } from "reactstrap"
 import Cart from './Components/Cart';
@@ -24,6 +24,7 @@ function App() {
 				pauseOnHover: false,
 				draggable: true,
 				progress: undefined,
+				transition: Slide
 			});
 			return
 		}
@@ -43,6 +44,8 @@ function App() {
 			pauseOnHover: true,
 			draggable: true,
 			progress: undefined,
+			type: "success",
+			transition: Flip
 		});
 		setItems([]);
 	}
