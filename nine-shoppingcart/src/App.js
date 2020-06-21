@@ -3,12 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import { toast } from 'react-toastify';
 import BuyPage from './Components/BuyPage';
+import "bootstrap/dist/css/bootstrap.min.css"
 
 
 function App() {
   const [items, setItems] = useState([]);
 
-  const addItem = (item)=>{
+  const addItemToCart = (item)=>{
     const isAlreadyAdded = items.find((i)=>i.id===item.id)
     if (isAlreadyAdded!==-1) {
       return toast("Item is already in cart",{
@@ -31,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      <BuyPage></BuyPage>
+      <BuyPage addItemToCart={addItemToCart}/>
     </div>
   );
 }
