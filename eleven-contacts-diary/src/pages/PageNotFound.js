@@ -9,4 +9,4 @@ const PageNotFound = () => {
 };
 
 //FIXME: missing keywords
-PageNotFound;
+export default PageNotFound;
