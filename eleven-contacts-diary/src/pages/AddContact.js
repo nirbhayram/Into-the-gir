@@ -72,7 +72,6 @@ const AddContact = () => {
 
 	// To upload image to firebase and then set the the image link in the state of the app
 	const imagePicker = async e => {
-		// TODO: upload image and set D-URL to state
 		try {
 			const file = e.target.file[0]
 
@@ -128,18 +127,49 @@ const AddContact = () => {
 
 	// setting contact to firebase DB
 	const addContact = async () => {
-		//TODO: add contact method
+		try {
+			firebase
+				.database()
+				.ref("contacts/" + v4())
+				.set({
+					name,
+					email,
+					phoneNumber,
+					address,
+					picture: downloadUrl,
+					star
+				});
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	// to handle update the contact when there is contact in state and the user had came from clicking the contact update icon
 	const updateContact = async () => {
-		//TODO: update contact method
+		try {
+			firebase
+				.database()
+				.ref("contacts/" + contactToUpdateKey)
+				.set({
+					name,
+					email,
+					phoneNumber,
+					address,
+					picture: downloadUrl,
+					star
+				});
+		} catch (error) {
+			console.log(error);
+			toast("Oppss..", { type: "error" });
+		}
 	};
 
 	// firing when the user click on submit button or the form has been submitted
 	const handleSubmit = e => {
 		e.preventDefault();
+		isUpdate ? updateContact() : addContact();
 
+		toast("Success", { type: "success" });
 		// isUpdate wll be true when the user came to update the contact
 		// when their is contact then updating and when no contact to update then adding contact
 		//TODO: set isUpdate value
