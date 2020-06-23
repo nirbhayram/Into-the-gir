@@ -17,6 +17,7 @@ const ViewContact = () => {
 	// destructuring contact from the state
 	// and rendering it in state
 	//FIXME: destructure contact from state
+	const {contact} = state
 	return (
 		<Container>
 			<Row className="mt-5 mb-5">
