@@ -7,14 +7,33 @@ import { FaCartArrowDown } from 'react-icons/fa'
 export default class Navbar extends Component {
     state = {
         navbarState: false,
-        navbarClass: "collapse navbar-collapse"
+        navbarClass: "collapse navbar-collapse",
+        menus: [{
+            id: 1241241324,
+            text: "home",
+            url: "/home"
+        }, {
+            id: 12342134124,
+            text: "about",
+            url: "/about"
+        },{
+            id: 12342134124,
+            text: "service",
+            url: "/service"
+        }, {
+            id: 134534253,
+            text: "contact",
+            url: "/contact"
+        }]
     }
     myToggler = () => {
         this.state.navbarState ?
             this.setState({
+                ...this.state,
                 navbarState: false,
                 navbarClass: "collapse navbar-collapse"
             }) : this.setState({
+                ...this.state,
                 navbarState: true,
                 navbarClass: "collapse navbar-collapse show"
             })
@@ -30,12 +49,11 @@ export default class Navbar extends Component {
                 </button>
                 <div className={this.state.navbarClass}>
                     <ul className="navbar-nav ml-auto mr-3">
-                        <li className="nav-item">
-                            <Link to="/" className="nav-link text-white">Home</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/" className="nav-link text-white">About us</Link>
-                        </li>
+                        {this.state.menus.map((menu) => (
+                            <li className="nav-item" key={menu.id}>
+                                <Link to={menu.url} className="nav-link text-white">{menu.text}</Link>
+                            </li>
+                        ))}
                         <li className="nav-item">
                             <Link to="/" className="nav-link text-white">
                                 <FaCartArrowDown className="cart-class" />
