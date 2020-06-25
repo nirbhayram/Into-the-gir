@@ -12,21 +12,13 @@ import { useStaticQuery, graphql } from "gatsby"
 import "./bootstrap.min.css"
 import "./layout.css"
 import Footer from "./resuable/Footer"
+import Navbar from "./resuable/Navbar"
 
 const Layout = ({ children }) => {
-	const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
 	return (
 		<div>
-			<main>{children}</main>
+      <Navbar/>
+			{/* <main>{children}</main> */}
       <Footer/>
 		</div>
 	)
