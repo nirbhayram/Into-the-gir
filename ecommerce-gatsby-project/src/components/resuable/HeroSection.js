@@ -40,9 +40,9 @@ export default function HeroSection({ image, title, subtitle, heroStyleClass }) 
             fluid={image}
             backgroundColor={`#040e18`}
         >
-            <h2 className="text-white text-uppercase">{title}</h2>
+            <h2 className="text-white text-uppercase text-center">{title}</h2>
             <div>
-                <h4 className="text-warning">{subtitle}</h4>
+                <h4 className="text-warning text-center">{subtitle}</h4>
             </div>
         </BackgroundImage>
     )

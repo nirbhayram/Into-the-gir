@@ -8,5 +8,9 @@ html {
   font-size: 1.5rem;
 }
 .hero-background{
-  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
