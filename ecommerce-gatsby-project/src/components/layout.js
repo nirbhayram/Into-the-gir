@@ -14,6 +14,7 @@ import "./layout.css"
 import Footer from "./resuable/Footer"
 import Navbar from "./resuable/Navbar"
 import Infoblock from "./resuable/Infoblock";
+import DualInfoblock from "./resuable/DualInfoblock"
 
 const Layout = ({ children }) => {
 	return (
@@ -21,6 +22,7 @@ const Layout = ({ children }) => {
 			<Navbar />
 			<main>{children}</main>
 			<Infoblock heading="About us"/>
+			<DualInfoblock heading="Our team"/>
 			<Footer />
 		</div>
 	)

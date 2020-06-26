@@ -4,7 +4,7 @@ import {Link} from 'gatsby'
 
 export default function Infoblock({ heading }) {
     return (
-        <section className="bg-theme py-4">
+        <section className="bg-theme py-4 my-2 mx-2">
             <div className="container">
                 <Heading title={heading} />
                 <div className="text-center col-10 col-sm-8 mx-auto">
