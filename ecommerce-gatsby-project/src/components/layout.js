@@ -13,12 +13,14 @@ import "./bootstrap.min.css"
 import "./layout.css"
 import Footer from "./resuable/Footer"
 import Navbar from "./resuable/Navbar"
+import Infoblock from "./resuable/Infoblock";
 
 const Layout = ({ children }) => {
 	return (
 		<div>
 			<Navbar />
 			<main>{children}</main>
+			<Infoblock heading="About us"/>
 			<Footer />
 		</div>
 	)
