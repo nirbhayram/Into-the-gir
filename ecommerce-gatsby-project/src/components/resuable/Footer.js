@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="footer-block">
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-12 pt-2 max-auto text-center bg-dark text-light">
+                        <div className="col-12 py-2 max-auto text-center bg-dark text-light">
                             <h6>
                                 Awesome copyright &copy; 2020
                             </h6>

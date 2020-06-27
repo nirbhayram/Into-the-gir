@@ -21,8 +21,6 @@ const Layout = ({ children }) => {
 		<div>
 			<Navbar />
 			<main>{children}</main>
-			<Infoblock heading="About us"/>
-			<DualInfoblock heading="Our team"/>
 			<Footer />
 		</div>
 	)

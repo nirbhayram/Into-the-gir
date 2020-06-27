@@ -11,7 +11,7 @@ export default class Navbar extends Component {
         menus: [{
             id: 1241241324,
             text: "home",
-            url: "/home"
+            url: "/"
         }, {
             id: 12342134124,
             text: "about",
