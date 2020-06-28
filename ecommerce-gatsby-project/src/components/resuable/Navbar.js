@@ -9,19 +9,19 @@ export default class Navbar extends Component {
         navbarState: false,
         navbarClass: "collapse navbar-collapse",
         menus: [{
-            id: 1241241324,
+            id: 124123241324,
             text: "home",
             url: "/"
         }, {
-            id: 12342134124,
+            id: 1234213443124,
             text: "about",
             url: "/about"
         },{
-            id: 12342134124,
+            id: 1234215634124,
             text: "service",
             url: "/service"
         }, {
-            id: 134534253,
+            id: 13453674253,
             text: "contact",
             url: "/contact"
         }]
