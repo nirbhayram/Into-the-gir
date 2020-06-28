@@ -17,11 +17,21 @@ export default function CartCourses(props) {
                     {courses.map((course) => (
                         <div className="col-3 my-1" key={course.node.id}>
                             <div className="card" >
-                                <img src={course.node.image.fixed.src} class="card-img-top" />
+                                <img src={course.node.image.fixed.src} className="card-img-top" />
                                 <div className="card-body">
                                     <h5 className="card-title">{course.node.title}</h5>
                                     <p className="card-text">{course.node.description}</p>
-                                    <a href="/" className="btn btn-warning btn-block btn-lg">Buy for ${course.node.price}</a>
+                                    <button
+                                        className="btn btn-warning btn-block btn-lg snipcart-add-item"
+                                        data-item-id={course.node.id}
+                                        data-item-name={course.node.title}
+                                        data-item-price={course.node.price}
+                                        data-item-url="http://myapp.com/products/bacon"
+                                        data-item-description={course.node.description}
+                                        data-item-image={course.node.image.fixed.src}
+                                    >
+                                        Buy for ${course.node.price}
+                                    </button>
                                 </div>
                             </div>
                         </div>
